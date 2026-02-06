@@ -115,3 +115,48 @@ ul { list-style: none; }
     .hero h1 { font-size: 2.5rem; }
     .card-header { flex-direction: column; }
 }
+
+/* --- Video Dropdown Styles --- */
+details.video-dropdown {
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #333;
+}
+
+details.video-dropdown summary {
+    cursor: pointer;
+    color: #ff4d4d; /* Matches your accent color */
+    font-weight: bold;
+    list-style: none; /* Hides default ugly arrow */
+    outline: none;
+    transition: color 0.3s;
+}
+
+/* Hides default arrow in Chrome/Safari */
+details.video-dropdown summary::-webkit-details-marker {
+    display: none;
+}
+
+details.video-dropdown summary:hover {
+    color: #e60000;
+}
+
+/* The actual video box */
+.video-responsive {
+    margin-top: 1rem;
+    position: relative;
+    padding-bottom: 56.25%; /* Forces 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #000;
+}
+
+.video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
