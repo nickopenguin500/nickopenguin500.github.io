@@ -23,7 +23,7 @@ async function sendMessage() {
 
     try {
         // You will replace this URL after Phase 2
-        const response = await fetch('https://YOUR-BACKEND-NAME.onrender.com/chat', {
+        const response = await fetch('https://personal-website-chatbot-backend.onrender.com/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ message: message })
