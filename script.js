@@ -17,8 +17,14 @@ async function sendMessage() {
     if (!message) return;
 
     // Display user message
-    window.innerHTML += `<div style="margin-bottom: 8px;"><strong>You:</strong> ${message}</div>`;
-    input.value = '';
+    // 1. Convert **bold** to <strong>bold</strong>
+    let formattedResponse = data.response.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+    // 2. (Optional) Convert *italics* to <em>italics</em>
+    formattedResponse = formattedResponse.replace(/\*(.*?)\*/g, '<em>$1</em>');
+
+    // 3. Display the formatted message
+    window.innerHTML += `<div style="margin-bottom: 8px; color: #ff4d4d;"><strong>AI:</strong> ${formattedResponse}</div>`;    input.value = '';
     window.scrollTop = window.scrollHeight;
 
     try {
